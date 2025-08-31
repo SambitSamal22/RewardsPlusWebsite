@@ -52,7 +52,7 @@
             <button
               class="flex items-center space-x-1 hover:text-gray-200 transition-colors"
             >
-              <span>Services</span>
+              <span>Resources</span>
               <svg
                 class="w-4 h-4"
                 fill="none"
@@ -73,12 +73,7 @@
               <router-link
                 to="/web-development"
                 class="block px-4 py-2 hover:bg-gray-100"
-                >Web Development</router-link
-              >
-              <router-link
-                to="/mobile-development"
-                class="block px-4 py-2 hover:bg-gray-100"
-                >Mobile Development</router-link
+                >API Reference</router-link
               >
             </div>
           </div>

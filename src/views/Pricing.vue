@@ -4,8 +4,8 @@
     <div
       class="relative bg-gradient-to-r from-[#a3f9d6] via-[#d1e8f6] to-[#d5a9f7] pt-24 pb-36 text-center text-black"
     >
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl md:text-5xl font-bold lg:whitespace-nowrap">
+      <div class="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold">
           Choose the plan that's suitable for you
         </h1>
         <p class="text-xl sm:text-2xl mt-4">
@@ -36,9 +36,12 @@
       </div>
 
       <!-- Curve Transition -->
-      <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+      <div
+        class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] -mb-px"
+      >
         <svg
-          class="relative block w-full"
+          class="relative block w-full h-[180px] md:h-[220px] lg:h-[260px] xl:h-[300px] 2xl:h-[360px]"
+          preserveAspectRatio="none"
           viewBox="0 0 1440 320"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -62,6 +65,9 @@
       >
         <h2 class="text-xl sm:text-2xl font-bold mb-4">{{ plan.title }}</h2>
         <p class="text-3xl sm:text-4xl font-extrabold mb-6">{{ plan.price }}</p>
+        <p v-if="plan.desc" class="text-3xl font-extrabold text-sm mb-4">
+          {{ plan.desc }}
+        </p>
         <ul class="mb-6 space-y-3 text-sm sm:text-base">
           <li
             v-for="(feature, i) in plan.features"
@@ -95,7 +101,7 @@ import AppDownload from "../components/AppDownload.vue";
 const plans = [
   {
     title: "Starter",
-    price: "€0/Month",
+    price: "€29/Month",
     features: [
       {
         text: "Mobile app for customer(Android & ios) i.e RewardsPlus: Rewards & More",
@@ -105,99 +111,63 @@ const plans = [
         text: "Mobile app for merchant(Android & ios) i.e RewardsPlus for Merchant",
         available: true,
       },
-      { text: "Merchant dashboard", available: true },
       {
-        text: "Merchant themed white level RewardsPlus App for both customers & Merchant",
-        available: false,
+        text: "Advanced Dashboard → Real-time Business Dashboard (all KPIs in one place)",
+        available: true,
       },
-      { text: "Rewards Gateway Integration", available: false },
-      { text: "End of the day settlement", available: true },
+      {
+        text: "Back-office Automation Suite → Admin tools like debit/credit adjustment",
+        available: true,
+      },
+      {
+        text: "Real-time Online Reporting → On-demand Reports (export & share anytime, anywhere)",
+        available: true,
+      },
+      { text: "Bonus point sharing", available: true },
     ],
   },
   {
     title: "Growth Plan",
+    desc: "Everything in Starter, plus advance growth tools like",
     price: "€49/Month",
     features: [
       {
-        text: "Mobile app for customer(Android & ios) i.e RewardsPlus: Rewards & More",
+        text: "POS integration for seamless in-store + online sync",
         available: true,
       },
       {
-        text: "Mobile app for merchant(Android & ios) i.e RewardsPlus for Merchant",
+        text: "Digital marketing & promotions toolkit (email, coupons, campaigns)",
         available: true,
       },
       {
         text: "Advanced merchant dashboard",
         available: true,
-      },
-      {
-        text: "Merchant themed white level RewardsPlus App for both Customers & Merchant",
-        available: true,
-      },
-      {
-        text: "Rewards Gateway Integration",
-        available: true,
-      },
-      {
-        text: "Real-time settlement",
-        available: true,
-      },
-      {
-        text: "Digital Marketing",
-        available: false,
-      },
-      {
-        text: "POS Integration",
-        available: false,
       },
     ],
   },
   {
     title: "Scale Plan",
     price: "€99/Month",
+    desc: "Everything in Growth Plan, plus advance features like",
     features: [
       {
-        text: "Mobile app for customer(Android & ios) i.e RewardsPlus: Rewards & More",
+        text: "Marketplace to sell merchant products",
         available: true,
       },
       {
-        text: "Mobile app for merchant(Android & ios) i.e RewardsPlus for merchant",
+        text: "Reward partners and affiliates to drive more sales",
         available: true,
       },
       {
-        text: "Advanced merchant dashboard",
+        text: "Coalition Loyalty Program",
         available: true,
       },
       {
-        text: "Merchant themed white level RewardsPlus App for both customers & Merchant",
+        text: "Multi-country Implementation",
         available: true,
       },
       {
-        text: "Rewards Gateway Integration",
-        available: true,
-      },
-      {
-        text: "Real-time settlement",
-        available: true,
-      },
-      {
-        text: "Digital Marketing",
-        available: true,
-      },
-      {
-        text: "POS Integration",
-        available: true,
-      },
-      {
-        text: "Multiple branch support for merchant in domestic or international market",
-        available: true,
-      },
-      {
-        text: "Merchant coupon",
-        available: true,
-      },
-      {
-        text: "Merchant online shopping",
+        text: "Multi-branch management",
         available: true,
       },
     ],

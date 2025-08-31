@@ -1,10 +1,10 @@
 <template>
   <div
-    class="min-h-screen bg-gradient-to-r from-[#3de35e] via-[#b9c9f2] to-[#c966dc]"
+    class="min-h-screen bg-gradient-to-r from-[#a7f3d0] via-[#d1e8f6] to-[#d5a9f7]"
   >
     <!-- Hero Section -->
     <section class="relative py-10 px-6 md:py-14">
-      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-start">
         <!-- Left: Image + Text -->
         <div>
           <!-- Phone Mockup -->
@@ -23,13 +23,14 @@
             Welcome to <span class="text-purple-600">RewardsPlus</span>
           </h1>
           <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-            A modern
-            <span class="font-semibold text-purple-600">loyalty system</span>
-            tailored for small and medium-sized merchants, designed to
-            <span class="font-semibold">boost sales</span> by retaining
-            customers. Replace outdated stamp cards with a seamless digital
-            solution, powered by
-            <strong class="text-purple-700">REWARDS+ Token</strong>.
+            <span class="font-semibold text-purple-600">RewardsPlus</span> is a
+            modern loyalty system tailored for small and medium-sized merchants,
+            aimed at <span class="font-semibold">boosting sales</span> by
+            retaining existing and potential customers. This innovative platform
+            replaces outdated stamp card systems with a seamless digital
+            solution. At its core, RewardsPlus uses a digital bonus point called
+            <strong class="text-purple-700">REWARDS+ Token</strong> — to reward
+            customer loyalty.
           </p>
 
           <!-- Buttons -->
@@ -46,7 +47,7 @@
         <!-- Right: Video -->
         <div class="flex justify-center">
           <div
-            class="w-full max-w-md aspect-video rounded-2xl overflow-hidden shadow-lg border-4 border-purple-400"
+            class="w-full max-w-lg aspect-video rounded-2xl overflow-hidden shadow-lg border-4 border-purple-400"
           >
             <iframe
               class="w-full h-full"
@@ -60,6 +61,12 @@
         </div>
       </div>
     </section>
+    <!-- UseCases Section -->
+    <UseCases />
+    <!-- HowItWorks Section -->
+    <!-- <HowItWorks /> -->
+    <!-- Statistics Section -->
+    <Statistics />
     <!-- App Section -->
     <AppDownload />
     <!-- Footer -->
@@ -70,4 +77,7 @@
 <script setup lang="ts">
 import Footer from "../components/Footer.vue";
 import AppDownload from "../components/AppDownload.vue";
+import UseCases from "../components/UseCases.vue";
+// import HowItWorks from "../components/HowItWorks.vue";
+import Statistics from "../components/OverallStatistics.vue";
 </script>

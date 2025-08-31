@@ -2,43 +2,57 @@
   <div class="min-h-screen font-inter">
     <!-- Gradient Background -->
     <div
-      class="bg-gradient-to-b from-[#d279ee] via-[#c7d2fe] to-[#a7f3d0] py-20"
+      class="bg-gradient-to-r from-[#a3f9d6] via-[#d1e8f6] to-[#d5a9f7] py-20"
     >
       <div
         class="container mx-auto px-6 grid md:grid-cols-2 gap-10 items-center"
       >
         <!-- Contact Info -->
-        <div>
-          <h2 class="text-4xl font-bold mb-6 text-black">
+        <!-- Contact Info -->
+        <div class="md:ml-8 lg:ml-12">
+          <!-- Heading -->
+          <h2
+            class="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold mb-6 text-black whitespace-nowrap"
+          >
             How Can We Help You ?
           </h2>
 
+          <!-- Address -->
           <div class="flex items-start mb-4 space-x-4">
             <div class="text-blue-600">
               <i class="fas fa-map-marker-alt"></i>
             </div>
-            <p class="text-black">GautingerStr. 24a, 82152, Krailling</p>
+            <p
+              class="text-sm sm:text-base md:text-lg text-black whitespace-nowrap"
+            >
+              GautingerStr. 24a, 82152, Krailling
+            </p>
           </div>
 
+          <!-- LinkedIn -->
           <div class="flex items-start mb-4 space-x-4">
             <div class="text-blue-600">
               <i class="fab fa-linkedin-in"></i>
             </div>
             <a
               href="https://www.linkedin.com/company/rewardsplus"
-              class="text-blue-800 underline break-all"
+              class="text-sm sm:text-base md:text-lg text-blue-800 underline break-all"
             >
               www.linkedin.com/company/rewardsplus
             </a>
           </div>
 
+          <!-- Email -->
           <div class="flex items-start mb-4 space-x-4">
             <div class="text-blue-600">
               <i class="fas fa-envelope"></i>
             </div>
-            <a href="mailto:support@rewardsplus.io" class="text-black"
-              >support@rewardsplus.io</a
+            <a
+              href="mailto:support@rewardsplus.io"
+              class="text-sm sm:text-base md:text-lg text-black"
             >
+              support@rewardsplus.io
+            </a>
           </div>
         </div>
 

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-h-screen py-16 px-4 sm:px-6 lg:px-8 font-inter rounded-2xl bg-gradient-to-br from-indigo-800 to-indigo-900"
+    class="min-h-auto py-16 px-4 sm:px-6 lg:px-8 font-inter rounded-2xl bg-gradient-to-br from-indigo-800 to-indigo-900"
   >
     <div
       class="max-w-xl mx-auto bg-white dark:bg-zinc-900 p-8 rounded-2xl shadow-lg"

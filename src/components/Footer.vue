@@ -13,11 +13,8 @@
         <defs>
           <linearGradient id="footerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stop-color="#6B21A8" />
-            <!-- from-purple-700 -->
             <stop offset="50%" stop-color="#4F46E5" />
-            <!-- via-indigo-600 -->
             <stop offset="100%" stop-color="#3B82F6" />
-            <!-- to-blue-500 -->
           </linearGradient>
         </defs>
         <polygon
@@ -29,9 +26,10 @@
 
     <!-- Footer Content -->
     <div
-      class="max-w-7xl mx-auto px-6 md:px-10 py-12 grid grid-cols-2 md:grid-cols-4 gap-10"
+      class="max-w-7xl mx-auto px-6 md:px-10 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8"
     >
-      <div>
+      <!-- Logo -->
+      <div class="flex sm:block justify-center sm:justify-start">
         <router-link to="/" class="flex items-center text-2xl font-bold">
           <img
             src="../assets/logo.png"
@@ -41,25 +39,50 @@
         </router-link>
       </div>
 
-      <div>
+      <!-- Corporate Office -->
+      <div class="text-center sm:text-left">
+        <h3 class="text-lg font-semibold mb-3">Corporate Office</h3>
+        <ul class="space-y-2 text-sm text-gray-200">
+          <li>RewardsPlus UG</li>
+          <li>Gautinger Str. 24a</li>
+          <li>82152, Krailling</li>
+          <li>T: <a href="tel:+498945249066">+49(0)89-45249066</a></li>
+          <li>M: <a href="tel:+491752470235">+49(0)175 2470235</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div class="text-center sm:text-left">
         <h3 class="text-lg font-semibold mb-3">Company</h3>
         <ul class="space-y-2 text-sm text-gray-200">
           <li><router-link to="#">About</router-link></li>
-          <li><router-link to="/contact">Contact</router-link></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">User Terms</a></li>
+          <li><a href="#">Merchant Terms</a></li>
+          <li><a href="#">Career</a></li>
         </ul>
       </div>
 
-      <div>
+      <!-- Support -->
+      <div class="text-center sm:text-left">
         <h3 class="text-lg font-semibold mb-3">Support</h3>
         <ul class="space-y-2 text-sm text-gray-200">
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
+          <li><router-link to="/contact">Contact</router-link></li>
+          <li>
+            <router-link to="/chat">Chat with us</router-link>
+          </li>
+          <li>
+            <router-link to="/faqs">FAQs</router-link>
+          </li>
         </ul>
       </div>
 
-      <div>
+      <!-- Follow Us -->
+      <div class="text-center sm:text-left">
         <h3 class="text-lg font-semibold mb-3">Follow Us</h3>
-        <div class="flex space-x-4 text-white text-xl">
+        <div
+          class="flex justify-center sm:justify-start space-x-4 text-white text-xl"
+        >
           <a
             href="https://instagram.com/youraccount"
             target="_blank"
@@ -103,16 +126,18 @@
         </div>
       </div>
     </div>
-
+    <!-- Divider Line -->
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+      <div class="border-t border-red-400 opacity-500 my-6"></div>
+    </div>
     <!-- Footer Bottom -->
-    <div class="pb-4 text-center text-sm text-gray-200 px-6">
+    <div class="pb-4 text-center font-semibold text-sm text-gray-200 px-6">
       © 2025 RewardsPlus, Inc. All rights reserved.
     </div>
   </footer>
 </template>
 
 <style scoped>
-/* Optional: FontAwesome hover effect */
 .fab {
   transition: color 0.3s;
 }
