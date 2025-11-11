@@ -147,7 +147,7 @@ const plans = [
   },
   {
     title: "Scale Plan",
-    price: "€99/Month",
+    price: "Pay-As-You-Go",
     desc: "Everything in Growth Plan, plus advance features like",
     features: [
       {

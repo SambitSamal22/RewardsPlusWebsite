@@ -15,12 +15,12 @@
 
         <!-- Desktop Nav Links -->
         <div class="hidden md:flex items-center space-x-6">
-          <!-- Our Apps -->
+          <!-- What We Do -->
           <div class="relative group">
             <button
               class="flex items-center space-x-1 hover:text-gray-200 transition-colors"
             >
-              <span>Our Apps</span>
+              <span>What We Do</span>
               <svg
                 class="w-4 h-4"
                 fill="none"
@@ -35,19 +35,33 @@
                 />
               </svg>
             </button>
+
+            <!-- Dropdown -->
             <div
-              class="absolute left-0 hidden group-hover:block bg-white text-black shadow-md rounded mt-2 z-50 min-w-[220px] whitespace-nowrap"
+              class="absolute left-0 hidden group-hover:block bg-white text-black shadow-md rounded mt-2 z-48 min-w-[220px] whitespace-nowrap"
             >
-              <router-link to="/app1" class="block px-4 py-2 hover:bg-gray-100">
-                RewardsPlus: Rewards & More
-              </router-link>
-              <router-link to="/app2" class="block px-4 py-2 hover:bg-gray-100">
-                RewardsPlus for Merchants
-              </router-link>
+              <button
+                @click="scrollToSection('use-cases')"
+                class="block w-full text-left px-4 py-2 hover:bg-gray-100"
+              >
+                Overview
+              </button>
+              <button
+                @click="scrollToSection('features')"
+                class="block w-full text-left px-4 py-2 hover:bg-gray-100"
+              >
+                Features
+              </button>
+              <button
+                @click="scrollToSection('how-it-works')"
+                class="block w-full text-left px-4 py-2 hover:bg-gray-100"
+              >
+                How it works
+              </button>
             </div>
           </div>
 
-          <!-- Services -->
+          <!-- Resources -->
           <div class="relative group">
             <button
               class="flex items-center space-x-1 hover:text-gray-200 transition-colors"
@@ -68,11 +82,15 @@
               </svg>
             </button>
             <div
-              class="absolute left-0 hidden group-hover:block bg-white text-black shadow-md rounded mt-2 z-50 w-48"
+              class="absolute left-0 hidden group-hover:block bg-white text-black shadow-md rounded mt-2 z-50 w-50 whitespace-nowrap"
             >
-              <router-link
-                to="/web-development"
-                class="block px-4 py-2 hover:bg-gray-100"
+              <router-link to="/about" class="block px-4 py-2 hover:bg-gray-100"
+                >RewardsPlus: Rewards & More</router-link
+              >
+              <router-link to="/about" class="block px-4 py-2 hover:bg-gray-100"
+                >RewardsPlus for Merchants</router-link
+              >
+              <router-link to="/about" class="block px-4 py-2 hover:bg-gray-100"
                 >API Reference</router-link
               >
             </div>
@@ -87,10 +105,11 @@
         </div>
       </div>
 
-      <!-- Right side: CTA Buttons (Desktop) -->
+      <!-- Right side: CTA Buttons -->
       <div class="hidden md:flex items-center space-x-4">
         <router-link
-          to="/merchant-login"
+          to=""
+          @click.prevent="goToMerchantLogin"
           class="font-semibold hover:text-gray-200 transition-colors"
         >
           Merchant Login
@@ -122,39 +141,47 @@
         </svg>
       </button>
 
-      <!-- Mobile Nav Content -->
+      <!-- Mobile Nav -->
       <div
         v-if="isOpen"
         class="absolute top-full left-0 w-full bg-[#7A5CFA] shadow-md p-4 space-y-4 md:hidden z-50"
       >
-        <router-link to="/app1" class="block" @click="closeMenu"
-          >App 1</router-link
+        <button
+          @click="
+            scrollToSection('use-cases');
+            closeMenu();
+          "
+          class="block"
         >
-        <router-link to="/app2" class="block" @click="closeMenu"
-          >App 2</router-link
+          Overview
+        </button>
+        <button
+          @click="
+            scrollToSection('features');
+            closeMenu();
+          "
+          class="block"
         >
-        <router-link to="/web-development" class="block" @click="closeMenu"
-          >Web Development</router-link
+          Features
+        </button>
+        <button
+          @click="
+            scrollToSection('how-it-works');
+            closeMenu();
+          "
+          class="block"
         >
-        <router-link to="/mobile-development" class="block" @click="closeMenu"
-          >Mobile Development</router-link
-        >
+          How it works
+        </button>
         <router-link to="/pricing" class="block" @click="closeMenu"
           >Pricing</router-link
         >
         <router-link to="/contact" class="block" @click="closeMenu"
           >Contact</router-link
         >
-        <router-link to="/merchant-login" class="block" @click="closeMenu"
-          >Merchant Login</router-link
+        <router-link to="/get-started" class="block" @click="closeMenu"
+          >Get Started</router-link
         >
-        <router-link
-          to="/get-started"
-          class="block bg-white text-black px-4 py-1 rounded-full text-center"
-          @click="closeMenu"
-        >
-          Get Started
-        </router-link>
       </div>
     </nav>
   </header>
@@ -162,22 +189,36 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 
 const isOpen = ref(false);
-const toggleMenu = () => {
-  isOpen.value = !isOpen.value;
-};
-const closeMenu = () => {
-  isOpen.value = false;
-};
+const toggleMenu = () => (isOpen.value = !isOpen.value);
+const closeMenu = () => (isOpen.value = false);
 
 const route = useRoute();
+const router = useRouter();
+
 const navLinkClass = (path: string) => {
   const isActive = route.path === path;
   return [
     "block py-2 md:py-0 transition-colors duration-200",
     isActive ? "text-white font-semibold" : "hover:text-gray-200",
   ];
+};
+
+// 🧭 Scroll to section on Home
+const scrollToSection = async (id: string) => {
+  if (router.currentRoute.value.path !== "/") {
+    await router.push("/");
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }, 300);
+  } else {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
+const goToMerchantLogin = () => {
+  window.open("https://merchants.rewardsplus.io/lms/auth/login", "_blank");
 };
 </script>

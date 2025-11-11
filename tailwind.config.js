@@ -2,15 +2,19 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-    darkMode: ["class"],
-    content: ["./index.html", "./src/**/*.{vue,js,ts}"],
+  darkMode: ["class"],
+  content: ["./index.html", "./src/**/*.{vue,js,ts}"],
   theme: {
-  	extend: {
+  	'extend': {
   		fontFamily: {
   			sans: [
   				'Inter',
-                    ...defaultTheme.fontFamily.sans
-                ]
+  				'Lato'
+  			],
+  			inter: [
+  				'Inter',
+  				'sans-serif'
+  			]
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -58,6 +62,28 @@ module.exports = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--reka-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--reka-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
   		}
   	}
   },

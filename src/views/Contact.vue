@@ -35,7 +35,7 @@
               <i class="fab fa-linkedin-in"></i>
             </div>
             <a
-              href="https://www.linkedin.com/company/rewardsplus"
+              href="https://www.linkedin.com"
               class="text-sm sm:text-base md:text-lg text-blue-800 underline break-all"
             >
               www.linkedin.com/company/rewardsplus

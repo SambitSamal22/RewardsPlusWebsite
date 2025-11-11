@@ -1,84 +1,141 @@
 <template>
-  <div class="bg-gradient-to-r from-green-300 via-blue-300 to-purple-300 py-16">
-    <div class="container mx-auto px-6 text-center">
+  <section
+    class="bg-gradient-to-r from-[#a7f3d0] via-[#d1e8f6] to-[#d5a9f7] py-16 px-6"
+  >
+    <div class="max-w-6xl mx-auto text-center">
       <!-- Title -->
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12">
-        How It Works
-      </h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">How It Works</h2>
 
-      <!-- Steps -->
+      <!-- Toggle Buttons -->
+      <div class="flex justify-center gap-2 mb-12">
+        <button
+          @click="activeTab = 'customer'"
+          :class="[
+            'px-4 py-2 rounded-lg shadow',
+            activeTab === 'customer'
+              ? 'text-white bg-gradient-to-r from-purple-500 to-blue-500'
+              : 'border border-gray-300 bg-white text-gray-700 shadow-sm',
+          ]"
+        >
+          Customer
+        </button>
+        <button
+          @click="activeTab = 'merchant'"
+          :class="[
+            'px-4 py-2 rounded-lg shadow',
+            activeTab === 'merchant'
+              ? 'text-white bg-gradient-to-r from-purple-500 to-blue-500'
+              : 'border border-gray-300 bg-white text-gray-700 shadow-sm',
+          ]"
+        >
+          Merchant
+        </button>
+      </div>
+
+      <!-- Steps Container -->
       <div
-        class="flex flex-col md:flex-row items-center justify-center gap-10 relative"
+        class="flex flex-wrap lg:flex-nowrap items-start justify-center gap-6 w-full max-w-6xl mx-auto"
       >
-        <!-- Step 1 -->
-        <div
-          class="relative bg-white shadow-md rounded-xl p-6 w-64 text-center"
-        >
-          <div
-            class="absolute -top-4 -left-4 bg-red-500 text-white font-bold rounded-full h-8 w-8 flex items-center justify-center"
-          >
-            1
+        <template v-for="(step, index) in steps[activeTab]" :key="index">
+          <!-- Card and Arrow Wrapper -->
+          <div class="flex items-center gap-4">
+            <!-- Step Card -->
+            <div
+              class="relative bg-white pt-12 p-6 rounded-xl border border-gray-200 shadow-sm w-60 min-h-[340px] flex flex-col justify-start"
+            >
+              <!-- Number Badge -->
+              <div
+                class="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 flex items-center justify-center bg-red-500 text-white font-bold rounded-full"
+              >
+                {{ index + 1 }}
+              </div>
+
+              <!-- Icon -->
+              <img
+                :src="step.icon"
+                :alt="step.title"
+                class="w-24 h-24 mx-auto my-6"
+              />
+
+              <!-- Title & Desc -->
+              <h3 class="font-semibold text-center">{{ step.title }}</h3>
+              <p class="text-sm text-gray-600 text-center">{{ step.desc }}</p>
+            </div>
+
+            <!-- Arrow -->
+            <div
+              v-if="index < steps[activeTab].length - 1"
+              class="hidden lg:flex items-center justify-center"
+            >
+              <svg
+                class="w-6 h-6 text-gray-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </div>
           </div>
-          <img
-            src="@/assets/icons/account.png"
-            alt="Account"
-            class="h-12 mx-auto mb-4"
-          />
-          <p class="text-gray-700"><strong>Create</strong> an account</p>
-        </div>
-
-        <!-- Connector Line -->
-        <div class="hidden md:block h-0.5 w-10 bg-gray-400"></div>
-
-        <!-- Step 2 -->
-        <div
-          class="relative bg-white shadow-md rounded-xl p-6 w-64 text-center"
-        >
-          <div
-            class="absolute -top-4 -left-4 bg-red-500 text-white font-bold rounded-full h-8 w-8 flex items-center justify-center"
-          >
-            2
-          </div>
-          <img src="" alt="Stamp" class="h-12 mx-auto mb-4" />
-          <p class="text-gray-700"><strong>Build</strong> your Stamp Card(s)</p>
-        </div>
-
-        <!-- Connector Line -->
-        <div class="hidden md:block h-0.5 w-10 bg-gray-400"></div>
-
-        <!-- Step 3 -->
-        <div
-          class="relative bg-white shadow-md rounded-xl p-6 w-64 text-center"
-        >
-          <div
-            class="absolute -top-4 -left-4 bg-red-500 text-white font-bold rounded-full h-8 w-8 flex items-center justify-center"
-          >
-            3
-          </div>
-          <img src="" alt="Plan" class="h-12 mx-auto mb-4" />
-          <p class="text-gray-700">
-            <strong>Select</strong> plan to publish card & begin your free trial
-          </p>
-        </div>
-
-        <!-- Connector Line -->
-        <div class="hidden md:block h-0.5 w-10 bg-gray-400"></div>
-
-        <!-- Step 4 -->
-        <div
-          class="relative bg-white shadow-md rounded-xl p-6 w-64 text-center"
-        >
-          <div
-            class="absolute -top-4 -left-4 bg-red-500 text-white font-bold rounded-full h-8 w-8 flex items-center justify-center"
-          >
-            4
-          </div>
-          <img src="" alt="Rocket" class="h-12 mx-auto mb-4" />
-          <p class="text-gray-700">
-            <strong>Implement</strong> your awesome new retention tool!
-          </p>
-        </div>
+        </template>
       </div>
     </div>
-  </div>
+  </section>
 </template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import IconAccount from "../assets/icons/account.png";
+import IconStamp from "../assets/icons/card.png";
+import IconPlan from "../assets/icons/stamp.png";
+import IconRocket from "../assets/icons/rocket.png";
+
+const activeTab = ref<"customer" | "merchant">("customer");
+
+const steps = {
+  customer: [
+    {
+      icon: IconAccount,
+      title: "Sign Up",
+      desc: "Register in the app to start earning rewards.",
+    },
+    {
+      icon: IconStamp,
+      title: "Collect",
+      desc: "Earn stamps every time you shop.",
+    },
+    {
+      icon: IconPlan,
+      title: "Redeem",
+      desc: "Redeem your rewards easily.",
+    },
+  ],
+  merchant: [
+    {
+      icon: IconAccount,
+      title: "Create",
+      desc: "Create an account for your business.",
+    },
+    {
+      icon: IconStamp,
+      title: "Build",
+      desc: "Build your Stamp Card(s).",
+    },
+    {
+      icon: IconPlan,
+      title: "Select",
+      desc: "Choose a plan & start free trial.",
+    },
+    {
+      icon: IconRocket,
+      title: "Implement",
+      desc: "Launch your customer retention tool.",
+    },
+  ],
+};
+</script>

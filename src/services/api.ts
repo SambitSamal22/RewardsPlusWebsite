@@ -6,7 +6,7 @@ class ApiService {
 
   constructor() {
     this.api = axios.create({
-      baseURL: "https://sit-validator.rewardsplus.io:9082/Neoteric/v1", // backend base URL
+      baseURL: "https://validator.rewardsplus.io:9082/Neoteric/v1", // backend base URL
       timeout: 10000,
       headers: {
         "Content-Type": "application/json",

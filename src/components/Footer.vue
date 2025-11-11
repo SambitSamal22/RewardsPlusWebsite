@@ -47,7 +47,7 @@
           <li>Gautinger Str. 24a</li>
           <li>82152, Krailling</li>
           <li>T: <a href="tel:+498945249066">+49(0)89-45249066</a></li>
-          <li>M: <a href="tel:+491752470235">+49(0)175 2470235</a></li>
+          <!-- <li>M: <a href="tel:+491752470235"></a></li> -->
         </ul>
       </div>
 
@@ -56,8 +56,10 @@
         <h3 class="text-lg font-semibold mb-3">Company</h3>
         <ul class="space-y-2 text-sm text-gray-200">
           <li><router-link to="#">About</router-link></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">User Terms</a></li>
+          <li>
+            <router-link to="/privacy-policy">Privacy Policy</router-link>
+          </li>
+          <li><router-link to="#">User Terms</router-link></li>
           <li><a href="#">Merchant Terms</a></li>
           <li><a href="#">Career</a></li>
         </ul>

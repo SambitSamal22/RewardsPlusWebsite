@@ -34,10 +34,18 @@
           </p>
 
           <!-- Buttons -->
-          <div class="flex flex-wrap gap-4">
+          <div class="flex flex-col sm:flex-row items-center gap-4 w-full">
+            <!-- Email Input -->
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="px-6 py-3 text-base sm:text-lg rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 w-full sm:w-80 md:w-96 shadow-sm"
+            />
+
+            <!-- Get Started Button -->
             <a
               href="#"
-              class="px-6 py-3 text-lg font-medium bg-purple-600 text-white rounded-xl shadow-lg hover:bg-purple-700 hover:shadow-xl transition"
+              class="px-6 py-3 text-base sm:text-lg font-medium bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 hover:shadow-xl transition w-full sm:w-auto text-center"
             >
               Get Started
             </a>
@@ -61,12 +69,26 @@
         </div>
       </div>
     </section>
-    <!-- UseCases Section -->
-    <UseCases />
-    <!-- HowItWorks Section -->
-    <!-- <HowItWorks /> -->
-    <!-- Statistics Section -->
-    <Statistics />
+
+    <!-- 1 UseCases Section -->
+    <section id="use-cases">
+      <UseCases />
+    </section>
+
+    <!-- 2 How It Works Section -->
+    <section id="how-it-works">
+      <HowItWorks />
+    </section>
+
+    <!-- 3 Features Section -->
+    <section id="features">
+      <Features />
+    </section>
+
+    <!-- 4 Statistics Section -->
+    <section id="statistics">
+      <Statistics />
+    </section>
     <!-- App Section -->
     <AppDownload />
     <!-- Footer -->
@@ -75,9 +97,10 @@
 </template>
 
 <script setup lang="ts">
+import UseCases from "../components/UseCases.vue";
+import HowItWorks from "../components/HowItWorks.vue";
+import Statistics from "../components/OverallStatistics.vue";
+import Features from "../components/Features.vue";
 import Footer from "../components/Footer.vue";
 import AppDownload from "../components/AppDownload.vue";
-import UseCases from "../components/UseCases.vue";
-// import HowItWorks from "../components/HowItWorks.vue";
-import Statistics from "../components/OverallStatistics.vue";
 </script>

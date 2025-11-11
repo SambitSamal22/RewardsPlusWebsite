@@ -12,7 +12,7 @@ import appStore from "@/assets/images/app-store-badge.png";
     </h2>
     <div class="flex justify-center space-x-6">
       <a
-        href="https://play.google.com/store/apps/details?id=yourapp"
+        href="https://play.google.com/store/apps/details?id=com.wtm.rewardsplus.rewards.more"
         target="_blank"
       >
         <img
@@ -21,7 +21,10 @@ import appStore from "@/assets/images/app-store-badge.png";
           class="h-14 transition-transform duration-300 hover:scale-105"
         />
       </a>
-      <a href="https://apps.apple.com/app/idyourappid" target="_blank">
+      <a
+        href="https://apps.apple.com/in/app/rewardsplus-rewards-more/id6737422630"
+        target="_blank"
+      >
         <img
           :src="appStore"
           alt="Download on the App Store"
