@@ -77,8 +77,10 @@ import feature1 from "@/assets/images/loyality.png";
 import feature2 from "@/assets/images/security.png";
 import feature3 from "@/assets/images/agileEngine.png";
 import feature4 from "@/assets/images/bonuscard.png";
-import Bonus from "@/assets/images/bonuspoint.jpeg";
+import Bonus from "@/assets/images/bonuspoint.png";
 import MultiPatner from "@/assets/images/multipatner.png";
+import Digital from "@/assets/images/digital.png";
+import Tier from "@/assets/images/tier.png";
 
 const features = [
   {
@@ -101,7 +103,28 @@ Whether it’s a single-merchant or a multi-partner loyalty program, this featur
     title: "Multi-Partner Loyalty System",
     description: `RewardsPlus offers a powerful multi-partner loyalty system that enables small and medium-sized businesses to collaborate and grow together through a shared rewards network. With this feature, customers can earn and redeem loyalty points across multiple participating merchants — for example, earning points at a café and spending them at a nearby boutique or salon. Each business maintains control over its own rewards rules and promotions while benefiting from shared customer engagement, cross-promotion, and increased foot traffic. By connecting local merchants into one cohesive loyalty ecosystem, RewardsPlus helps create stronger community relationships, enhance customer retention, and deliver more value to shoppers through a convenient, unified rewards experience.`,
     points: [],
-    image: MultiPatner, // you can change this to another relevant image if available
+    image: MultiPatner,
+  },
+
+  {
+    title: "Digital Marketing / In-App Campaign Feature",
+    description: `The Digital Marketing and In-App Campaign feature in the RewardsPlus Loyalty System empowers businesses to create, manage, and automate personalized marketing campaigns directly within the loyalty ecosystem.
+It seamlessly combines customer engagement, targeted promotions, and loyalty insights to drive repeat visits, higher spend, and stronger brand connections.
+As part of In-App Campaign Management, it enables`,
+    points: [
+      "Design and launch dynamic in-app campaigns directly from the RewardsPlus dashboard.",
+      "Display promotional banners, pop-ups, or in-app notifications inside the loyalty app.",
+      "Use behavior-based triggers (e.g., visit frequency, points expiry, birthday) to automatically launch campaigns.",
+    ],
+    image: Digital,
+  },
+  {
+    title: "Tier Management",
+    description: `The Tier Management feature in the RewardsPlus Loyalty System enables businesses to design and manage a structured loyalty hierarchy—such as Silver, Gold, and Platinum levels—that recognizes and rewards customers based on their engagement, spending, and loyalty behavior.
+
+This feature helps brands motivate customers to progress through higher tiers, unlocking greater rewards and exclusive privileges as they deepen their relationship with the business.`,
+    points: [],
+    image: Tier,
   },
   {
     title: "Unified Loyalty Platform",

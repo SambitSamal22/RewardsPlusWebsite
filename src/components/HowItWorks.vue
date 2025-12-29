@@ -94,11 +94,17 @@ import IconAccount from "../assets/icons/account.png";
 import IconStamp from "../assets/icons/card.png";
 import IconPlan from "../assets/icons/stamp.png";
 import IconRocket from "../assets/icons/rocket.png";
+import IconDownload from "../assets/icons/down.png";
 
 const activeTab = ref<"customer" | "merchant">("customer");
 
 const steps = {
   customer: [
+    {
+      icon: IconDownload,
+      title: "Download the App",
+      desc: "Your customers download the Rewardsplus App, register their details and join your loyalty program.",
+    },
     {
       icon: IconAccount,
       title: "Sign Up",

@@ -98,7 +98,7 @@ const bonusCount = ref(0);
 const statsSection = ref<HTMLElement | null>(null);
 const error = ref<string | null>(null);
 
-let hasAnimated = false; // ✅ ensures only first time
+let hasAnimated = false;
 
 function animateCounter(
   from: number,
@@ -151,7 +151,7 @@ onMounted(() => {
   observer = new IntersectionObserver(
     (entries) => {
       if (entries[0].isIntersecting && !hasAnimated) {
-        hasAnimated = true; // ✅ prevent multiple runs
+        hasAnimated = true;
         fetchStatistics();
       }
     },

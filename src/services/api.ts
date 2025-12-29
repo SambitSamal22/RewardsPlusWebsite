@@ -1,12 +1,13 @@
 // src/services/api.ts
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { v4 as uuidv4 } from "uuid";
 
 class ApiService {
   private api: AxiosInstance;
 
   constructor() {
     this.api = axios.create({
-      baseURL: "https://validator.rewardsplus.io:9082/Neoteric/v1", // backend base URL
+      baseURL: "https://validator.rewardsplus.io:9082/Neoteric/V1", // backend base URL
       timeout: 10000,
       headers: {
         "Content-Type": "application/json",
@@ -16,9 +17,12 @@ class ApiService {
     // Request Interceptor
     this.api.interceptors.request.use(
       (config) => {
-        // Example: add token if needed
-        // const token = localStorage.getItem("token");
-        // if (token) config.headers.Authorization = `Bearer ${token}`;
+        // Add Idempotency-Key only for POST, PUT, DELETE
+        const method = config.method?.toUpperCase();
+
+        if (method && ["POST", "PUT", "DELETE"].includes(method)) {
+          config.headers["Idempotency-Key"] = uuidv4();
+        }
         return config;
       },
       (error) => Promise.reject(error)

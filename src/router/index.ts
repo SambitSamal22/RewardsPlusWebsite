@@ -8,6 +8,9 @@ import Features from "../components/Features.vue";
 import HowItWorks from "../components/HowItWorks.vue";
 import Faqs from "../views/FaqPage.vue";
 import ChatWithUs from "../views/ChatWithUs.vue";
+import Downloads from "../views/Download.vue";
+import Activation from "../views/Activation.vue";
+import ForgotPassword from "../views/ForgotPassword.vue";
 
 const routes = [
   { path: "/", name: "Home", component: Home },
@@ -19,6 +22,13 @@ const routes = [
   { path: "/how-it-works", name: "HowItWorks", component: HowItWorks },
   { path: "/faqs", name: "Faqs", component: Faqs },
   { path: "/chat", name: "ChatWithUs", component: ChatWithUs },
+  { path: "/downloads", name: "Downloads", component: Downloads },
+  { path: "/activation", name: "Activation", component: Activation },
+  {
+    path: "/forgot-password",
+    name: "ForgotPassword",
+    component: ForgotPassword,
+  },
 ];
 
 const router = createRouter({

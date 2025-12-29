@@ -86,7 +86,7 @@
           class="flex justify-center sm:justify-start space-x-4 text-white text-xl"
         >
           <a
-            href="https://instagram.com/youraccount"
+            href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
             class="hover:text-pink-500 transition duration-300"
@@ -94,7 +94,7 @@
             <i class="fab fa-instagram"></i>
           </a>
           <a
-            href="https://facebook.com/youraccount"
+            href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
             class="hover:text-blue-500 transition duration-300"
@@ -102,7 +102,7 @@
             <i class="fab fa-facebook-f"></i>
           </a>
           <a
-            href="https://twitter.com/youraccount"
+            href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
             class="hover:text-blue-400 transition duration-300"
@@ -118,7 +118,7 @@
             <i class="fab fa-youtube"></i>
           </a>
           <a
-            href="https://linkedin.com/in/youraccount"
+            href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
             class="hover:text-blue-300 transition duration-300"
@@ -134,7 +134,7 @@
     </div>
     <!-- Footer Bottom -->
     <div class="pb-4 text-center font-semibold text-sm text-gray-200 px-6">
-      © 2025 RewardsPlus, Inc. All rights reserved.
+      © {{ new Date().getFullYear() }} RewardsPlus, Inc. All rights reserved.
     </div>
   </footer>
 </template>
