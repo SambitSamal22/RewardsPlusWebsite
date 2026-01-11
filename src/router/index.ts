@@ -29,6 +29,12 @@ const routes = [
     name: "ForgotPassword",
     component: ForgotPassword,
   },
+  {
+    path: "/resources/api-reference/:api?",
+    name: "ApiReferenceDetail",
+    component: () => import("../views/resources/api-reference/index.vue"),
+    props: true,
+  },
 ];
 
 const router = createRouter({

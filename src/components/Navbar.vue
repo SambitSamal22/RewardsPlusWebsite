@@ -90,7 +90,9 @@
               <router-link to="/about" class="block px-4 py-2 hover:bg-gray-100"
                 >RewardsPlus for Merchants</router-link
               >
-              <router-link to="/about" class="block px-4 py-2 hover:bg-gray-100"
+              <router-link
+                to="/resources/api-reference"
+                class="block px-4 py-2 hover:bg-gray-100"
                 >API Reference</router-link
               >
             </div>
